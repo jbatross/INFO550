@@ -1,0 +1,31 @@
+---
+title: "Homework 3"
+author: "Jonathan Batross"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output: 
+  html_document:
+    toc: true
+    highlights: "pygments"
+---
+
+<!-- Report
+-->
+
+```{r,echo=T}
+library(dplyr)
+library(table1)
+library(tmap)
+```
+
+```{r,echo=T}
+WN<-read.csv("West Nile.csv")
+
+WN2<-WN%>%
+  group_by(County,Year)%>%
+  summarise(total_cases=sum(Positive.Cases))
+table1(~total_cases|Year, data=WN2)
+```
+#This is a simple sum of total cases by year.
+# Hannah Kalvin 1
+# Youni Zhao 1
+# Zihe Song 1
