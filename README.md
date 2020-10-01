@@ -4,16 +4,9 @@ The dataset is based on mosquio data and West Nile Virus incidence in California
 The packages necessary for this analysis is as can be done by running the following `R` code </br>
 ```{r}
 list.of.packages <- c(
-  "reshape2",
-  "ggplot2",
-  "ggpubr",
+  "table1",
   "dplyr",
-  "tidyverse",
-  "kableExtra",
-  "gridExtra",
-  "RColorBrewer",
-  "cowplot",
-  "cellranger"
+  "tmap"
 )
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
