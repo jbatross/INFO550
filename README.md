@@ -13,3 +13,9 @@ if(length(new.packages)) install.packages(new.packages)
 invisible(lapply(list.of.packages,library,character.only=T))
 rm(list.of.packages,new.packages) #Removes lists for cleanliness
 ```
+# Exectue Analysis
+To execute the analysis, from the project folder you can run
+```
+'Rscript -e "rmarkdown::render('report.Rmd')"
+```
+This will create a file called report.html output in your directory that contains the results.
