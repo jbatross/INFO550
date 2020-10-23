@@ -19,7 +19,7 @@ library(sf)
 ```
 
 ```{r,echo=T}
-WN<-read.csv("West Nile.csv")
+WN<-read.csv("West_Nile.csv")
 CA<-read_sf("CA_Counties/CA_Counties.shp")
 
 WN2<-WN%>%
