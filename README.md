@@ -15,8 +15,6 @@ invisible(lapply(list.of.packages,library,character.only=T))
 rm(list.of.packages,new.packages) #Removes lists for cleanliness
 ```
 # Exectue Analysis
-To execute the analysis, from the project folder you can run
-```
-'Rscript -e "rmarkdown::render('report.Rmd')"
-```
-This will create a file called report.html output in your directory that contains the results.
+To execute the analysis, from the project folder you can use the make file.
+The makefile will create a report.html which can be manipulated using R.
+**WARNING: When creating report, the terminal will have for a minute or so to create the map**
