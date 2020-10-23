@@ -11,21 +11,38 @@ output:
 <!-- Report
 -->
 
-```{r,echo=T}
+```{r,echo=T,message=FALSE}
 library(dplyr)
 library(table1)
 library(tmap)
+library(sf)
 ```
 
 ```{r,echo=T}
 WN<-read.csv("West Nile.csv")
+CA<-read_sf("CA_Counties/CA_Counties.shp")
 
 WN2<-WN%>%
+  group_by(County)%>%
+  summarise(total_cases=sum(Positive.Cases))
+WN2$NAME<-WN2$County
+
+WN3<-WN%>%
   group_by(County,Year)%>%
   summarise(total_cases=sum(Positive.Cases))
-table1(~total_cases|Year, data=WN2)
+table1(~total_cases|Year, data=WN3)
+matches<-match(WN2$NAME,CA$NAME)
+matches2<-unique(matches)
+CA2<-CA[matches2,]
+
+join<-right_join(CA2,WN2,by="NAME")
+t1 <- tm_shape(join) + 
+  tm_fill('total_cases',
+          style = 'quantile',
+          palette = 'YlOrRd',
+          title = 'Cases of West Nile Virus') + 
+  tm_borders(group = "NAME",alpha = 1)
+t2<-t1+tm_shape(CA)+tm_borders(alpha=1,lwd = 2,col = "black")
+tmap_arrange(t2)
+
 ```
-#This is a simple sum of total cases by year.
-# Hannah Kalvin 1
-# Youni Zhao 1
-# Zihe Song 1
