@@ -3,7 +3,7 @@ report.html: join.csv Report.Rmd install
 	Rscript -e "rmarkdown::render('Report.Rmd')" 
 
 #rule for cleaning data
-join.csv: clean.R "West Nile.csv" CA_Counties/CA_Counties.shp
+join.csv: install clean.R West_Nile.csv CA_Counties/CA_Counties.shp
 	chmod +x clean.R && \
 	Rscript clean.R
 
@@ -18,4 +18,3 @@ help:
 	@echo "Report.html: Creates final report."
 	@echo "install: Installs R packages needed for analysis."
 	@echo "join.csv: dataset of the combined Geospatial information and case counts."
-
