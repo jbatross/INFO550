@@ -16,5 +16,5 @@ rm(list.of.packages,new.packages) #Removes lists for cleanliness
 ```
 # Exectue Analysis
 To execute the analysis, from the project folder you can use the make file.
-The makefile will create a report.html which can be manipulated using R.
+The makefile will create a report.html which can be manipulated using R. </br>
 **WARNING: When creating report, the terminal will have for a minute or so to create the map**
