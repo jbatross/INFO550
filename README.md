@@ -21,21 +21,21 @@ rm(list.of.packages,new.packages) #Removes lists for cleanliness
 3) Pull the image from my DockerHub repository by running the following code
 
 ```bash
-     docker pull jbatross97/info-550:latest
+   docker pull jbatross97/info-550:latest
  ```
   
 4) Mount your local directory to the directory in the container by running the following code
  
- ``` bash
-     docker run -v /local_directory_path:/project jbatross97/info-550:latest
+ ```bash
+    docker run -v /local_directory_path:/project jbatross97/info-550:latest
  ```
  Add your local directory path that has the clone of this repository. 
  This will create a file called `report.html` output in your local working directory.
 ### Using MAKE(Not recommended)
-To execute the analysis, from the project folder you can run: </br>
-        ``` bash
-     make report.html
-      ```
+To execute the analysis using MAKE, from the project folder you can run: </br>
+``` bash
+    make report.html
+```
       
 This command will create a report.html which can be manipulated further using `R`. </br>
 
