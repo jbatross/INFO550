@@ -21,7 +21,7 @@ rm(list.of.packages,new.packages) #Removes lists for cleanliness
 3) Pull the image from my DockerHub repository by running the following code
 
 ```bash
-     docker push jbatross97/info-550:latest
+     docker pull jbatross97/info-550:latest
  ```
   
 4) Mount your local directory to the directory in the container by running the following code
